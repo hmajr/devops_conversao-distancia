@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: devops-conversao-distancia
 spec:
-  replicas: 1
+  replicas: 6
   selector:
     matchLabels:
       app: devops-conversao-distancia
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devops-conversao-distancia
-        image: hmajr/desafio_conversao-distancia:v1
+        image: hmajr/desafio_conversao-distancia:v2
         resources:
           limits:
             memory: "256Mi"
