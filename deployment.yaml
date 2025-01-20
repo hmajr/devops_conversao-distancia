@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops_conversao-distancia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops_conversao-distancia
+  template:
+    metadata:
+      labels:
+        app: devops_conversao-distancia
+    spec:
+      containers:
+      - name: devops_conversao-distancia
+        image: hmajr/desafio_conversao-distancia:v1
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
